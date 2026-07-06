@@ -13,3 +13,5 @@ services:
 networks:
   tunnel-network:
     external: true
+  gateway-network:
+    external: true
