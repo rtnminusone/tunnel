@@ -1,0 +1,15 @@
+services:
+
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare-tunnel
+    restart: always
+    networks:
+      - tunnel-network
+    environment:
+      - TUNNEL_TOKEN=${CF_TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run
+
+networks:
+  tunnel-network:
+    external: true
